@@ -1,19 +1,22 @@
 import React from "react";
 import "./styles.css";
 
-const Cities = [
-  "relativeListItem1",
-  "relativeListItem2",
-  "relativeListItem3",
-  "relativeListItem4",
-  "relativeListItem5",
-  "relativeListItem6"
+const Relatives = [
+  "Shubham",
+  "Adarsh",
+  "Rishiraj",
+  "Omprakash",
+  "Khushabu",
+  "Shreya"
 ];
-const getCity = Cities.map((el) => <li key={el.toString()}>{el}</li>);
 export default function App() {
   return (
     <div>
-      <ol>{getCity}</ol>
+      <ol key="relativeList">
+        {Relatives.map((relative, index) => (
+          <li key={`relativeListItem ${index + 1}`}>{relative}</li>
+        ))}
+      </ol>
     </div>
   );
 }
